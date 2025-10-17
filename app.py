@@ -13,13 +13,13 @@ app = Flask(__name__)
 # Email Configuration from environment variables
 SMTP_SERVER = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
 SMTP_PORT = int(os.getenv('SMTP_PORT', 587))
-SENDER_EMAIL = os.getenv('SENDER_EMAIL')
-SENDER_PASSWORD = os.getenv('SENDER_PASSWORD')
+SENDER_EMAIL = os.getenv('student.community.habesha@gmail.com')
+SENDER_PASSWORD = os.getenv('@Biniam235')
 RECEIVER_EMAIL = 'bestenoughproperty@gmail.com' # The email provided by the user
 
 def send_booking_email(data):
     if not SENDER_EMAIL or not SENDER_PASSWORD:
-        print("Error: SENDER_EMAIL or SENDER_PASSWORD not set in .env file.")
+        print("Error: student.community.habesha@gmail.com or @Biniam235 not set in .env file.")
         return False
 
     # Construct the email content
@@ -37,8 +37,8 @@ def send_booking_email(data):
     """
 
     msg = MIMEMultipart()
-    msg['From'] = SENDER_EMAIL
-    msg['To'] = RECEIVER_EMAIL
+    msg['From'] = student.community.habesha@gmail.com
+    msg['To'] = @Biniam235
     msg['Subject'] = subject
     msg.attach(MIMEText(body, 'plain'))
 
@@ -46,9 +46,9 @@ def send_booking_email(data):
         # Connect to the SMTP server
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()  # Use TLS encryption
-            server.login(SENDER_EMAIL, SENDER_PASSWORD)
-            server.sendmail(SENDER_EMAIL, RECEIVER_EMAIL, msg.as_string())
-        print(f"Email successfully sent to {RECEIVER_EMAIL}")
+            server.login(student.community.habesha@gmail.com, @Biniam235)
+            server.sendmail(student.community.habesha@gmail.com, bestenoughproperty@gmail.com, msg.as_string())
+        print(f"Email successfully sent to {bestenoughproperty@gmail.com}")
         return True
     except Exception as e:
         print(f"Error sending email: {e}")
