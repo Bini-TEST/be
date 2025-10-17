@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Enough Guesthouse - Luxury Accommodation in Pretoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F7E7CE;
+            --gold-dark: #B8860B;
+            --gold-darker: #8B6914;
+            --charcoal: #050000;
+            --charcoal-light: #050400;
+            --cream: #F8F4E9;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--charcoal);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold-darker));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-large {
+            padding: 14px 28px;
+            font-size: 1.1rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--charcoal);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        }
+
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--charcoal-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--charcoal-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(248, 246, 246, 0.1);
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--charcoal-light);
+            margin: 0;
+            text-align: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--charcoal);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-bottom: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
+            transform: rotate(45deg);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) translate(-10px, -10px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(45deg) translate(10px, 10px);
+            }
+        }
+
+        /* Quick Info Bar */
+        .quick-info {
+            background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
+            padding: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            color: var(--white);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .info-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .info-item p {
+            color: var(--gold-light);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-features {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--gold-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--gold-darker);
+        }
+
+        .feature-badge i {
+            color: var(--gold);
+        }
+
+        /* Rooms Section */
+        .rooms {
+            padding: 6rem 0;
+            background-color: var(--cream);
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .room-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gold-light);
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        .room-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .room-card:hover .room-image img {
+            transform: scale(1.05);
+        }
+
+        .room-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--charcoal);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .room-content {
+            padding: 1.5rem;
+        }
+
+        .room-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .room-description {
+            color: var(--charcoal-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .room-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature i {
+            color: var(--gold);
+            width: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            aspect-ratio: 1 / 1;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-content {
+            color: var(--white);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay-content {
+            transform: translateY(0);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        /* Amenities Section */
+        .amenities {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .amenity-card {
+            background-color: var(--cream);
+            border-radius: var(--radius);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid var(--gold-light);
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            background-color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .amenity-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .amenity-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--charcoal);
+        }
+
+        .amenity-card p {
+            color: var(--charcoal-light);
+        }
+
+        /* Location Section */
+        .location {
+            padding: 6rem 0;
+            background-color: var(--cream);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .location-details {
+            margin-top: 2rem;
+        }
+
+        .location-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-item i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-top: 0.3rem;
+        }
+
+        .location-item h4 {
+            margin-bottom: 0.3rem;
+            color: var(--charcoal);
+        }
+
+        .location-item a {
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .location-item a:hover {
+            color: var(--gold);
+        }
+
+        .location-map {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--gold-light);
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .booking-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--cream);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gold-light);
+        }
+
+        .booking-form {
+            margin-top: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gold-light);
+            border-radius: var(--radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background-color: var(--cream);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            min-width: 180px;
+            border: 1px solid var(--gold-light);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .contact-button i {
+            font-size: 2.5rem;
+            color: var(--gold);
+        }
+
+        .contact-button.whatsapp i {
+            color: #25D366;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+            color: var(--charcoal);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content,
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+                gap: 1rem;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .btn-large {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .contact-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .booking-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .about-features {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .room-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .btn-large {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h1>Best Enough</h1>
+                    <p>Guesthouse</p>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#amenities" class="nav-link">Amenities</a></li>
+                    <li><a href="#location" class="nav-link">Location</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#booking" class="btn btn-primary">Book Now</a>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero" id="home">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="Guest house.mp4" type="video/mp4">
+                <!-- Fallback image in case video doesn't load -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Best Enough Guesthouse</h1>
+            <p class="hero-subtitle">Experience luxury, elegance, and warm hospitality in the heart of Pretoria</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary btn-large">Book Your Stay</a>
+                <a href="#rooms" class="btn btn-secondary btn-large">Explore Rooms</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Free Wi-Fi</h3>
+                    <p>High-speed internet</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Free Parking</h3>
+                    <p>Secure parking available</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-plane"></i>
+                    <h3>Airport Pickup</h3>
+                    <p>Convenient transfers</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-soap"></i>
+                    <h3>Laundry Service</h3>
+                    <p>Professional cleaning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Luxury Awaits You</h2>
+                    <p class="section-description">At Best Enough Guesthouse, we pride ourselves on providing exceptional accommodation that combines modern luxury with timeless elegance. Our beautifully appointed rooms and personalized service ensure that every guest enjoys a memorable stay.</p>
+                    <p class="section-description">Whether you're visiting for business or leisure, our guesthouse offers the perfect retreat with all the amenities you need for a comfortable and relaxing experience.</p>
+                    <div class="about-features">
+                        <div class="feature-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium Luxury</span>
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-heart"></i>
+                            <span>Warm Hospitality</span>
+                        </div>
+                        <div class="feature-badge">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Prime Location</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="1.PNG" alt="Guesthouse interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <h2 class="section-title text-center">Our Rooms</h2>
+            <p class="section-subtitle text-center">Choose from our carefully designed luxury accommodations</p>
+            
+            <div class="rooms-grid">
+                <!-- Deluxe Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="2.jpeg" alt="Deluxe Room">
+                        <div class="room-badge">Most Popular</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Deluxe Room</h3>
+                        <p class="room-description">Elegantly furnished room with modern amenities, perfect for couples or solo travelers seeking comfort and style.</p>
+                        <div class="room-features">
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>Queen Bed</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Free Wi-Fi</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tv"></i>
+                                <span>Smart TV</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air Conditioning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>En-suite Bathroom</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-coffee"></i>
+                                <span>Tea/Coffee</span>
+                            </div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-block">Book This Room</a>
+                    </div>
+                </div>
+
+                <!-- Family Suite -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="4.PNG" alt="Family Suite">
+                        <div class="room-badge">Spacious</div>
+                    </div>
+                    <div class="room-content">
+                        <h3 class="room-title">Family Suite</h3>
+                        <p class="room-description">Spacious suite designed for families, featuring multiple beds and a comfortable living area for quality time together.</p>
+                        <div class="room-features">
+                            <div class="feature">
+                                <i class="fas fa-bed"></i>
+                                <span>Multiple Beds</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>Free Wi-Fi</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tv"></i>
+                                <span>Smart TV</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Air Conditioning</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-bath"></i>
+                                <span>En-suite Bathroom</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-couch"></i>
+                                <span>Living Area</span>
+                            </div>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-block">Book This Room</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title text-center">Our Gallery</h2>
+            <p class="section-subtitle text-center">Take a visual tour of our luxurious guesthouse and facilities</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Items - 23 images -->
+                <div class="gallery-item" data-index="0">
+                    <img src="G 1.JPEG" alt="Guesthouse exterior">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Elegant Exterior</h4>
+                            <p>Beautiful facade of our guesthouse</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="G 3.JPEG" alt="Modern bathroom">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Modern Bathroom</h4>
+                            <p>Clean and contemporary design</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="5">
+                    <img src="G 6.JPEG" alt="Outdoor area">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Beautiful Garden</h4>
+                            <p>Peaceful outdoor space</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="G 7.JPEG" alt="Guesthouse entrance">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Welcoming Entrance</h4>
+                            <p>Grand entrance to our guesthouse</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="G 8.JPEG" alt="Bedroom detail">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Bedroom Detail</h4>
+                            <p>Attention to comfort and style</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="8">
+                    <img src="G 9.JPEG" alt="Bathroom amenities">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Premium Amenities</h4>
+                            <p>Luxury bathroom products</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="12">
+                    <img src="G 13.JPEG" alt="Bedroom with view">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Room with a View</h4>
+                            <p>Wake up to beautiful scenery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="13">
+                    <img src="G 14.JPEG" alt="Modern lighting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Elegant Lighting</h4>
+                            <p>Atmospheric interior design</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="gallery-item" data-index="15">
+                    <img src="G 16.JPEG" alt="Bathroom detail">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Spa-like Bathroom</h4>
+                            <p>Relaxing atmosphere</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="16">
+                    <img src="2.jpeg" alt="Outdoor seating">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Al Fresco Dining</h4>
+                            <p>Enjoy meals outdoors</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-index="18">
+                    <img src="G 19.JPEG" alt="Room decor">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Artful Decor</h4>
+                            <p>Thoughtfully designed interiors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="19">
+                    <img src="G 20.JPEG" alt="Work space">
+                    <div class="gallery-overlay">
+                        <div class="gallery-overlay-content">
+                            <h4>Productive Workspace</h4>
+                            <p>Perfect for business travelers</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" id="lightbox-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-next" id="lightbox-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Amenities Section -->
+    <section class="amenities" id="amenities">
+        <div class="container">
+            <h2 class="section-title text-center">Our Amenities</h2>
+            <p class="section-subtitle text-center">Everything you need for a luxurious stay</p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Free Wi-Fi</h3>
+                    <p>Stay connected with complimentary high-speed internet throughout the property</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Free Parking</h3>
+                    <p>Secure, on-site parking available for all guests at no additional charge</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Airport Pickup</h3>
+                    <p>Convenient airport transfer service to make your arrival stress-free</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-soap"></i>
+                    </div>
+                    <h3>Laundry Service</h3>
+                    <p>Professional laundry and dry cleaning services available on request</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Reception</h3>
+                    <p>Round-the-clock assistance for all your needs and inquiries</p>
+                </div>
+                
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Breakfast Available</h3>
+                    <p>Start your day with a delicious breakfast prepared fresh daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info">
+                    <h2 class="section-title">Our Location</h2>
+                    <p class="section-description">Best Enough Guesthouse is conveniently located in Pretoria, offering easy access to major attractions, business districts, and transportation hubs.</p>
+                    
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>25°45'36.3"S 28°12'12.5"E<br>224 Celliers St, Pretoria, Gauteng, South Africa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:0648095913">064 809 5913</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:bestenoughproperty@gmail.com">bestenoughproperty@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <iframe 
+                        src="https://www.google.com/maps?q=-25.7600833,28.2034722&hl=en&z=14&output=embed"
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-card">
+                <h2 class="section-title text-center">Check Availability</h2>
+                <p class="section-subtitle text-center">Book your perfect luxury stay with us</p>
+                
+                <form class="booking-form" id="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkin">Check-in Date</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Check-out Date</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="room-type">Room Type</label>
+                            <select id="room-type" name="room-type" required>
+                                <option value="">Select a room</option>
+                                <option value="deluxe">Deluxe Room</option>
+                                <option value="family">Family Suite</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" max="10" value="2" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests (Optional)</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large btn-block">Check Availability</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Get In Touch</h2>
+            <p class="section-subtitle text-center">We're here to help with any questions</p>
+            
+            <div class="contact-methods">
+                <a href="tel:0648095913" class="contact-button">
+                    <i class="fas fa-phone"></i>
+                    <span>Call Us</span>
+                </a>
+                
+                <a href="https://wa.me/27648095913" target="_blank" class="contact-button whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+                
+                <a href="mailto:bestenoughproperty@gmail.com" class="contact-button">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h3>Best Enough</h3>
+                        <p>Guesthouse</p>
+                    </div>
+                    <p class="footer-description">Your luxury home away from home in Pretoria. Experience elegance, comfort, and warm hospitality.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#rooms">Rooms</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#location">Location</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0648095913">064 809 5913</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:bestenoughproperty@gmail.com">bestenoughproperty@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>224 Celliers St, Pretoria, Gauteng, South Africa</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/27648095913" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Best Enough Guesthouse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                // IMPORTANT: The server must be running on http://127.0.0.1:5000 for this to work.
+                const response = await fetch('http://127.0.0.1:5000/submit_booking', {
+                    method: 'POST',
+                    body: new URLSearchParams(data), // Send data as form-urlencoded
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('Thank you for your booking request! We have sent the details to the property owner and they will contact you shortly.');
+                    form.reset();
+                } else {
+                    alert(`Submission failed: ${result.message || 'An unknown error occurred.'}`);
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Could not connect to the booking server. Please ensure the server is running and try again later.');
+            }
+        });
+
+        // Set minimum date for check-in to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        
+        // Set minimum date for check-out to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+        document.getElementById('checkout').setAttribute('min', tomorrowFormatted);
+
+        // Gallery Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        let currentIndex = 0;
+        
+        // Open lightbox with clicked image
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                currentIndex = parseInt(item.getAttribute('data-index'));
+                updateLightboxImage();
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+        
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Navigate to previous image
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateLightboxImage();
+        });
+        
+        // Navigate to next image
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateLightboxImage();
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateLightboxImage();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                updateLightboxImage();
+            }
+        });
+        
+        // Update lightbox image
+        function updateLightboxImage() {
+            const imgSrc = galleryItems[currentIndex].querySelector('img').src;
+            const imgAlt = galleryItems[currentIndex].querySelector('img').alt;
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = imgAlt;
+        }
+    </script>
+</body>
+</html>
